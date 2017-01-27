@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 
 namespace OrderingApplication.Models
 {
@@ -16,6 +17,7 @@ namespace OrderingApplication.Models
         public string CompanyName { get; set; }
         [Required]
         [EmailAddress]
+        [Remote("VerifyEmail", "Client")]
         public string Email { get; set; }
         [Required]
         public string Phone { get; set; }
